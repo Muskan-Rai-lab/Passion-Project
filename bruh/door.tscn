@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8g6y6xdsnk5o"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_h10ey"]
+[ext_resource type="Script" path="res://door_parent.gd" id="1_wi33m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co0qv"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_18r75"]
+material = SubResource("StandardMaterial3D_co0qv")
+size = Vector3(0.1, 3, 2.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b0n8l"]
+points = PackedVector3Array(0.05, 1.5, 1.25, -0.05, 1.5, 1.25, 0.05, -1.5, 1.25, 0.05, 1.5, -1.25, -0.05, 1.5, -1.25, -0.05, -1.5, 1.25, 0.05, -1.5, -1.25, -0.05, -1.5, -1.25)
+
+[sub_resource type="Animation" id="Animation_lrsqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge/StaticBody3D/MeshInstance3D:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hinge:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r47tl"]
+resource_name = "close"
+
+[sub_resource type="Animation" id="Animation_jla4e"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge/StaticBody3D/MeshInstance3D:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 1, 1), Color(1, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hinge:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hf23o"]
+_data = {
+"RESET": SubResource("Animation_lrsqg"),
+"close": SubResource("Animation_r47tl"),
+"open": SubResource("Animation_jla4e")
+}
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_wi33m")
+
+[node name="hinge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+script = ExtResource("1_h10ey")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge/StaticBody3D"]
+mesh = SubResource("BoxMesh_18r75")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_b0n8l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hinge/StaticBody3D"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_hf23o")
+}

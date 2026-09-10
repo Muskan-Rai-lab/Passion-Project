@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dehwu764jxpmw"]
+
+[ext_resource type="ArrayMesh" uid="uid://brgfe1w8egcrk" path="res://assets/big_Shelf.obj" id="1_a8bix"]
+[ext_resource type="Texture2D" uid="uid://bowe2s5xpwu8g" path="res://wood_table_worn_diff_4k.jpg" id="2_4gaj2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rr7t"]
+albedo_texture = ExtResource("2_4gaj2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36e2w"]
+size = Vector3(1, 0.01, 3.6)
+
+[node name="big_Shelf" type="StaticBody3D"]
+
+[node name="BigShelf" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_a8bix")
+surface_material_override/0 = SubResource("StandardMaterial3D_6rr7t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.578947, 0)
+shape = SubResource("BoxShape3D_36e2w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05324, 0)
+shape = SubResource("BoxShape3D_36e2w")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51278, 0)
+shape = SubResource("BoxShape3D_36e2w")

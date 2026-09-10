@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1mfrw8ee060f"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnaq2kyxk25yf" path="res://assets/stove.obj" id="1_twxyr"]
+[ext_resource type="Texture2D" uid="uid://cmtqfcib6ao6u" path="res://Toilet.jpg" id="2_ufjyv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0s2e"]
+albedo_texture = ExtResource("2_ufjyv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8knqy"]
+albedo_texture = ExtResource("2_ufjyv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlhi5"]
+albedo_color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="stove" type="StaticBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.2, -1.4, 9.4)
+
+[node name="Stove" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_twxyr")
+surface_material_override/0 = SubResource("StandardMaterial3D_b0s2e")
+surface_material_override/1 = SubResource("StandardMaterial3D_8knqy")
+surface_material_override/2 = SubResource("StandardMaterial3D_tlhi5")

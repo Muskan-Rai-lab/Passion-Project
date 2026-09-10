@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://1hffutuqrwsx"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_uffq5"]
+[ext_resource type="Script" path="res://head.gd" id="2_grggi"]
+[ext_resource type="Script" path="res://raycast.gd" id="3_ewqbe"]
+[ext_resource type="Script" path="res://SpringArm3D.gd" id="4_t25gl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_grch4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7570x"]
+
+[node name="player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+floor_stop_on_slope = false
+script = ExtResource("1_uffq5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_grch4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7570x")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.3)
+script = ExtResource("2_grggi")
+
+[node name="RayCast3D" type="RayCast3D" parent="head"]
+transform = Transform3D(1.5, 0, 0, 0, -6.55671e-08, -1.5, 0, 1.5, -6.55671e-08, 0, 0.11979, 0)
+script = ExtResource("3_ewqbe")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000304997, 0)
+light_energy = 1.865
+spot_angle = 40.14
+
+[node name="SpringArm3D" type="SpringArm3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.98023e-08)
+script = ExtResource("4_t25gl")
+
+[node name="Camera3D" type="Camera3D" parent="head/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.0381496)

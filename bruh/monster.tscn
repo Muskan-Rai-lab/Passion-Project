@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgf0pk2ruq0e3"]
+
+[ext_resource type="Script" path="res://monster.gd" id="1_g0qin"]
+[ext_resource type="Texture2D" uid="uid://boiykn4hkj1im" path="res://window_texture.png" id="2_ab05u"]
+[ext_resource type="Script" path="res://chase_player.gd" id="2_p1m82"]
+[ext_resource type="Texture2D" uid="uid://cbi456vjp2dea" path="res://images.jpg" id="4_rbr3p"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pj8ed"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fagug"]
+albedo_texture = ExtResource("2_ab05u")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nqo4l"]
+radius = 0.6
+height = 2.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce2yl"]
+albedo_texture = ExtResource("4_rbr3p")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r658q"]
+size = Vector2(0.5, 0.5)
+
+[node name="monster" type="CharacterBody3D" groups=["monster"]]
+script = ExtResource("1_g0qin")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_pj8ed")
+surface_material_override/0 = SubResource("StandardMaterial3D_fagug")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nqo4l")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+radius = 0.7
+
+[node name="jumpscare_camera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0614285, 0.477755, -1.24844)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0, 0.381094, 0)
+script = ExtResource("2_p1m82")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1, 4.09684e-09, -8.73267e-08, 8.74228e-08, 0.0468624, -0.998901, 0, -0.998901, -0.0468624, 0, 0.627625, -0.52321)
+material_override = SubResource("StandardMaterial3D_ce2yl")
+mesh = SubResource("PlaneMesh_r658q")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="pick_new_destination"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj2ihbuxbhlit"]
+
+[ext_resource type="Script" path="res://key.gd" id="1_x0bdm"]
+[ext_resource type="ArrayMesh" uid="uid://ct6g1e6x2g5ah" path="res://assets/bowl.obj" id="2_d5ad3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dxvvg"]
+height = 0.2
+radius = 0.2
+
+[node name="StaticBody3D" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_x0bdm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0628734, 0)
+mesh = ExtResource("2_d5ad3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_dxvvg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

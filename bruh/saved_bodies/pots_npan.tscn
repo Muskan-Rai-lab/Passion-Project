@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bslig4vf1t5u5"]
+
+[ext_resource type="ArrayMesh" uid="uid://djbpabmc2pg5c" path="res://assets/potsnpan.obj" id="1_5yas1"]
+
+[node name="pots_npan" type="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.8813, -1.0815, 7.47092)
+
+[node name="Potsnpan" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_5yas1")

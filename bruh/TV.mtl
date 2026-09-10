@@ -1,0 +1,57 @@
+# Blender MTL File: 'TV.blend'
+# Material Count: 5
+
+newmtl Materiais.001
+Ns 62.673614
+Ka 1.000000 1.000000 1.000000
+Kd 0.157433 0.030179 0.033543
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Metal
+Ns 646.006947
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Plastico
+Ns 136.111116
+Ka 0.708333 0.708333 0.708333
+Kd 0.126766 0.142400 0.081238
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -bm 4.000000 C:\\Users\\Usuário\\Documents\\Google Drive 1\\Documentos\\Estudos\\Udemy\\Blender\\Meus Projetos\\1-ASSETS\\Textura\\Plastico\\Plastico 1\\leather_red_03_nor_2k.png
+map_Ns C:\\Users\\Usuário\\Documents\\Google Drive 1\\Documentos\\Estudos\\Udemy\\Blender\\Meus Projetos\\1-ASSETS\\Textura\\Plastico\\Plastico 1\\leather_red_03_rough_2k.png
+
+newmtl Tela.005
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl tv
+Ns 156.250015
+Ka 0.666667 0.666667 0.666667
+Kd 0.172148 0.129392 0.029649
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -bm 3.000000 C:\\Users\\Usuário\\Documents\\Google Drive 1\\Documentos\\Estudos\\Udemy\\Blender\\Meus Projetos\\1-ASSETS\\Textura\\Madeira\\Madeira-lisa\\Wood026_2K_Normal.png
+map_Kd C:\\Users\\Usuário\\Documents\\Google Drive 1\\Documentos\\Estudos\\Udemy\\Blender\\Meus Projetos\\1-ASSETS\\Textura\\Madeira\\Madeira-lisa\\Wood026_2K_Color.png
+map_Ns C:\\Users\\Usuário\\Documents\\Google Drive 1\\Documentos\\Estudos\\Udemy\\Blender\\Meus Projetos\\1-ASSETS\\Textura\\Madeira\\Madeira-lisa\\Wood026_2K_Roughness.png

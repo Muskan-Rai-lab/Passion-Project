@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qpobthbwdi0m"
+path="res://.godot/imported/wall_Shelf.obj-fdb74bf6b013ac86b6f5114c5525506a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_Shelf.obj-fdb74bf6b013ac86b6f5114c5525506a.mesh"]
+
+source_file="res://assets/wall_Shelf.obj"
+dest_files=["res://.godot/imported/wall_Shelf.obj-fdb74bf6b013ac86b6f5114c5525506a.mesh", "res://.godot/imported/wall_Shelf.obj-fdb74bf6b013ac86b6f5114c5525506a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

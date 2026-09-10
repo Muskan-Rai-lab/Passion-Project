@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://banwffcl8ia5"
+path="res://.godot/imported/daraz.obj-2f54a4fb324e6b3fc5c6c2c02af3aa65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/daraz.obj-2f54a4fb324e6b3fc5c6c2c02af3aa65.mesh"]
+
+source_file="res://assets/daraz.obj"
+dest_files=["res://.godot/imported/daraz.obj-2f54a4fb324e6b3fc5c6c2c02af3aa65.mesh", "res://.godot/imported/daraz.obj-2f54a4fb324e6b3fc5c6c2c02af3aa65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.8, 0.75, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

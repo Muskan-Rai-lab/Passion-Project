@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dlp5nsoxdtoat"
+path="res://.godot/imported/Full_Size_Bed_with_White_Sheets_Black_V1.obj-72143c2965191f7849641fca29eea653.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Full_Size_Bed_with_White_Sheets_Black_V1.obj-72143c2965191f7849641fca29eea653.mesh"]
+
+source_file="res://Full_Size_Bed_with_White_Sheets_Black_V1.obj"
+dest_files=["res://.godot/imported/Full_Size_Bed_with_White_Sheets_Black_V1.obj-72143c2965191f7849641fca29eea653.mesh", "res://.godot/imported/Full_Size_Bed_with_White_Sheets_Black_V1.obj-72143c2965191f7849641fca29eea653.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.03, 0.03, 0.03)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

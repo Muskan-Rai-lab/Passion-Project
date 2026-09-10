@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfusglyeaqjxb"
+path="res://.godot/imported/towel.obj-394d49b39cf0f854c8fd16529ab78e3d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/towel.obj-394d49b39cf0f854c8fd16529ab78e3d.mesh"]
+
+source_file="res://towel.obj"
+dest_files=["res://.godot/imported/towel.obj-394d49b39cf0f854c8fd16529ab78e3d.mesh", "res://.godot/imported/towel.obj-394d49b39cf0f854c8fd16529ab78e3d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.02, 0.02, 0.02)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
