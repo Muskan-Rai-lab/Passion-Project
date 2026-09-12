@@ -1,26 +1,34 @@
 extends RigidBody3D
 
 @export var positions:Array[Node3D]
-@onready var rng =RandomNumberGenerator.new()
+@onready var rng = RandomNumberGenerator.new()
 
 var pos_obj
-var int_text 
+@onready var int_text = get_node("/root/" + get_tree().current_scene.name + "/player/picked_up")
+var is_ready := false   # <-- guard flag
 
 func interact():
-	int_text.text = "[b][i][font_size=36][center]YOU PICKED UP A KEY"
-	
+	int_text.visible = true
+	queue_free()
+
 func _on_body_entered(body):
-	pos_obj = body
-	freeze = true
-	
+	if not is_ready:
+		pos_obj = body
+		freeze = true
+
 func _physics_process(delta:float) -> void:
 	if pos_obj != null:
-		global_transform.origin = pos_obj.global_transform.origin
+		global_position = pos_obj.global_transform.origin
+
 func _ready() -> void:
-	var chance = rng.randi_range(0,positions.size() - 1)
-	global_transform.origin = positions[chance].global_transform.origin
-	int_text = get_node("/root/" + get_tree().current_scene.name + "/key_text")
-			
+	rng.randomize()
+	if positions.is_empty():
+		push_error("No positions assigned!")
+		return
+
+	var chance = rng.randi_range(0, positions.size() - 1)
+	print("Chose index: ", chance, " -> ", positions[chance].global_position)
+	global_position = positions[chance].global_position
 
 
-	
+	is_ready = true

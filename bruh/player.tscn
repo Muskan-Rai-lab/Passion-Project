@@ -24,18 +24,46 @@ shape = SubResource("CapsuleShape3D_7570x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.3)
 script = ExtResource("2_grggi")
 
-[node name="RayCast3D" type="RayCast3D" parent="head"]
-transform = Transform3D(1.5, 0, 0, 0, -6.55671e-08, -1.5, 0, 1.5, -6.55671e-08, 0, 0.11979, 0)
-script = ExtResource("3_ewqbe")
-
 [node name="SpotLight3D" type="SpotLight3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000304997, 0)
 light_energy = 1.865
 spot_angle = 40.14
 
 [node name="SpringArm3D" type="SpringArm3D" parent="head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.98023e-08)
 script = ExtResource("4_t25gl")
+metadata/_edit_group_ = true
 
 [node name="Camera3D" type="Camera3D" parent="head/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.0381496)
+
+[node name="RayCast3D" type="RayCast3D" parent="head/SpringArm3D"]
+transform = Transform3D(1.5, 0, 0, 0, -7.86805e-08, -1.5, 0, 1.8, -6.55671e-08, 0, -0.0133321, 0)
+script = ExtResource("3_ewqbe")
+
+[node name="crosshair" type="Label" parent="head/SpringArm3D"]
+offset_right = 1152.0
+offset_bottom = 640.0
+text = "."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="E" type="Label" parent="."]
+visible = false
+offset_left = 534.0
+offset_top = 488.0
+offset_right = 635.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 20
+text = "[E]interact"
+
+[node name="picked_up" type="Label" parent="."]
+visible = false
+offset_left = 410.0
+offset_top = 442.0
+offset_right = 755.0
+offset_bottom = 573.0
+theme_override_font_sizes/font_size = 20
+text = "Youve picked up a key"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="visibility_changed" from="picked_up" to="head/SpringArm3D/RayCast3D" method="_on_picked_up_visibility_changed"]
