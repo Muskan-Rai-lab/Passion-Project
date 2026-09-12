@@ -6,6 +6,12 @@ extends CharacterBody3D
 @export var air_acceleration: float = 8.0
 @export var gravity_multiplier: float = 1.0
 @export var mouse_sensitivity: float = 0.003
+@export var camera: Camera3D
+@export var hand_socket: Marker3D    # empty Marker3D positioned where the gun should sit, child of camera
+@export var world_root: Node3D       # reference to the main scene/level node, for reparenting on drop
+
+var nearby_gun: Node = null
+var equipped_gun: Node = null
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -40,3 +46,31 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0.0, stop_rate * delta * speed)
 
 	move_and_slide()
+
+func set_nearby_gun(gun: Node) -> void:
+	nearby_gun = gun
+	# show an "E to pick up" UI prompt here if you want
+
+func clear_nearby_gun(gun: Node) -> void:
+	if nearby_gun == gun:
+		nearby_gun = null
+		# hide UI prompt here
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact"):
+		_handle_interact()
+
+	if Input.is_action_pressed("shoot") and equipped_gun:
+		equipped_gun.try_fire()
+
+func _handle_interact() -> void:
+	if equipped_gun == null and nearby_gun != null:
+		equipped_gun = nearby_gun
+		nearby_gun = null
+		equipped_gun.pickup(hand_socket, camera)
+	elif equipped_gun != null:
+		var gun_to_drop = equipped_gun
+		equipped_gun = null
+		gun_to_drop.drop(world_root)
+
+

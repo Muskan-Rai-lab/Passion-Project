@@ -9,10 +9,12 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7570x"]
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "hand_socket")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 floor_stop_on_slope = false
 script = ExtResource("1_uffq5")
+camera = NodePath("head/SpringArm3D/Camera3D")
+hand_socket = NodePath("head/SpringArm3D/Camera3D/HandSocket")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_grch4")
@@ -34,6 +36,9 @@ script = ExtResource("4_t25gl")
 metadata/_edit_group_ = true
 
 [node name="Camera3D" type="Camera3D" parent="head/SpringArm3D"]
+
+[node name="HandSocket" type="Marker3D" parent="head/SpringArm3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263505, -0.375549, -0.0899806)
 
 [node name="RayCast3D" type="RayCast3D" parent="head/SpringArm3D"]
 transform = Transform3D(1.5, 0, 0, 0, -7.86805e-08, -1.5, 0, 1.8, -6.55671e-08, 0, -0.0133321, 0)
