@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2nsuptvgpwvo"]
+
+[ext_resource type="ArrayMesh" uid="uid://wlaxakumgx5u" path="res://assets/tiny_table.obj" id="1_x8j65"]
+[ext_resource type="Texture2D" uid="uid://bowe2s5xpwu8g" path="res://wood_table_worn_diff_4k.jpg" id="2_4sk86"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_15ktk"]
+height = 0.5
+radius = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpsi4"]
+albedo_texture = ExtResource("2_4sk86")
+
+[node name="TinyTable" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, -1.8, -9.3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CylinderShape3D_15ktk")
+
+[node name="TinyTable" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_x8j65")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpsi4")

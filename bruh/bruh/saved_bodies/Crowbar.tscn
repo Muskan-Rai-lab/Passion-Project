@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://mn6d4ivvl023"]
+
+[ext_resource type="ArrayMesh" uid="uid://c2kemvu0pbtwt" path="res://crowbar.obj" id="1_afb7v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrl2m"]
+metallic = 0.7
+
+[node name="Crowbar" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.7, -0.7, -9.5)
+
+[node name="Crowbar" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_afb7v")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_yrl2m")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn67q0c2sw52g"]
+
+[ext_resource type="ArrayMesh" uid="uid://qpobthbwdi0m" path="res://assets/wall_Shelf.obj" id="1_l1uoc"]
+[ext_resource type="Texture2D" uid="uid://cquniu1sfnjqn" path="res://wood_table_001_diff_4k.jpg" id="2_b63l6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4tao"]
+albedo_texture = ExtResource("2_b63l6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_70d6m"]
+size = Vector3(4, 0.1, 0.8)
+
+[node name="wallshelf" type="StaticBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.3, -1.5, 9.5)
+
+[node name="WallShelf" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_l1uoc")
+surface_material_override/0 = SubResource("StandardMaterial3D_k4tao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_70d6m")

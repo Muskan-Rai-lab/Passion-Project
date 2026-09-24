@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c26in32hqrprg"]
+
+[ext_resource type="ArrayMesh" uid="uid://cf5ongn8jggrj" path="res://toilet.obj" id="1_00dig"]
+
+[node name="toilet" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6, -0.9, -9.4)
+
+[node name="toilet" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_00dig")
+skeleton = NodePath("../../../..")

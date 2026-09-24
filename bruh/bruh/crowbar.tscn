@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3v8it4rujf8t"]
+
+[ext_resource type="Script" path="res://key.gd" id="1_qg5rv"]
+[ext_resource type="ArrayMesh" uid="uid://c2kemvu0pbtwt" path="res://crowbar.obj" id="2_6yeir"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nqy4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_khdqy"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="crowbar" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_qg5rv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("2_6yeir")
+surface_material_override/0 = SubResource("StandardMaterial3D_3nqy4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_khdqy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

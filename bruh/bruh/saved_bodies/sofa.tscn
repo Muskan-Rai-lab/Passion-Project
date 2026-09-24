@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://binwygie84ynb"]
+
+[ext_resource type="ArrayMesh" uid="uid://coneunr7j5vln" path="res://assets/sofa.obj" id="1_6t28t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4jh0"]
+size = Vector3(2.8, 0.1, 1.1)
+
+[node name="sofa" type="StaticBody3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, -1.6, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_j4jh0")
+
+[node name="sofa" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_6t28t")
+skeleton = NodePath("../../../..")
