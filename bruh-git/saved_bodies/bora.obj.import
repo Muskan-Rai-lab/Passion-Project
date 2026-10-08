@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0ckjamnlb1fd"
+path="res://.godot/imported/bora.obj-334fc4bb437656a97fc09ca754d5c2ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bora.obj-334fc4bb437656a97fc09ca754d5c2ea.mesh"]
+
+source_file="res://saved_bodies/bora.obj"
+dest_files=["res://.godot/imported/bora.obj-334fc4bb437656a97fc09ca754d5c2ea.mesh", "res://.godot/imported/bora.obj-334fc4bb437656a97fc09ca754d5c2ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.03, 0.03, 0.03)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
