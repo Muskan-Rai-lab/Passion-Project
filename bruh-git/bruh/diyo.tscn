@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd4ggrrsigft3"]
+
+[ext_resource type="Script" path="res://key.gd" id="1_bfnel"]
+[ext_resource type="ArrayMesh" uid="uid://dlahs6tuh6qeb" path="res://diyo.obj" id="2_tmo7i"]
+[ext_resource type="Texture2D" uid="uid://ctxdjlx6i76sh" path="res://diyo_0.png" id="3_yc280"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nqy4"]
+albedo_texture = ExtResource("3_yc280")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yq3pp"]
+height = 0.2
+radius = 0.2
+
+[node name="diyo" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_bfnel")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_tmo7i")
+surface_material_override/0 = SubResource("StandardMaterial3D_3nqy4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0931664, 0)
+shape = SubResource("CylinderShape3D_yq3pp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

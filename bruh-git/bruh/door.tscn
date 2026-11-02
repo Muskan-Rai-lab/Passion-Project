@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://b8g6y6xdsnk5o"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_h10ey"]
+[ext_resource type="Script" path="res://door_parent.gd" id="1_wi33m"]
+[ext_resource type="Script" path="res://Inventory/item_data.gd" id="3_ggwrr"]
+[ext_resource type="Texture2D" uid="uid://cgt7rqvbsv1bn" path="res://icon.svg" id="3_wolg3"]
+[ext_resource type="Texture2D" uid="uid://bowe2s5xpwu8g" path="res://wood_table_worn_diff_4k.jpg" id="3_ybpo5"]
+
+[sub_resource type="Resource" id="Resource_dkpu1"]
+script = ExtResource("3_ggwrr")
+id = &"closet-key"
+display_name = "closet-key"
+icon = ExtResource("3_wolg3")
+consumed_on_use = true
+can_drop = true
+player_flag = &""
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co0qv"]
+albedo_texture = ExtResource("3_ybpo5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_18r75"]
+material = SubResource("StandardMaterial3D_co0qv")
+size = Vector3(0.1, 2.5, 1.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_updpe"]
+size = Vector3(0.1, 2.5, 1.9)
+
+[sub_resource type="Animation" id="Animation_u7jyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iq7tm"]
+resource_name = "open"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkqph"]
+_data = {
+"RESET": SubResource("Animation_u7jyu"),
+"open": SubResource("Animation_iq7tm")
+}
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_wi33m")
+
+[node name="hinge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.9)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
+script = ExtResource("1_h10ey")
+dialogue_id = "door_locked"
+required_item = SubResource("Resource_dkpu1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge/StaticBody3D"]
+mesh = SubResource("BoxMesh_18r75")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/StaticBody3D"]
+shape = SubResource("BoxShape3D_updpe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hinge/StaticBody3D"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_gkqph")
+}
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="hinge/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, -0.5)
+radius = 0.1
+height = 0.2
+
+[connection signal="child_door_spotted" from="." to="hinge/StaticBody3D" method="_on_door_child_door_spotted"]

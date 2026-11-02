@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://0njxl274hxdd"]
+
+[ext_resource type="Script" path="res://gloves.gd" id="1_bfilb"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_eibrc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iydlq"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.0146517, 0.470697, 0.470697, 0.0735213, 0.352957, 0.47061, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.0146517, 0.470697, -0.470697, 0.5, -0.5, 0.5, -0.0146517, 0.470697, 0.470697, 0.0146517, 0.470697, -0.470697)
+
+[node name="gloves" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_bfilb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_eibrc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_iydlq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

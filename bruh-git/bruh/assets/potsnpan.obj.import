@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cb4j2qcwoamkf"
+path="res://.godot/imported/potsnpan.obj-b28acb430154789d62cb607432bddd02.mesh"
+
+[deps]
+
+files=["res://.godot/imported/potsnpan.obj-b28acb430154789d62cb607432bddd02.mesh"]
+
+source_file="res://assets/potsnpan.obj"
+dest_files=["res://.godot/imported/potsnpan.obj-b28acb430154789d62cb607432bddd02.mesh", "res://.godot/imported/potsnpan.obj-b28acb430154789d62cb607432bddd02.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

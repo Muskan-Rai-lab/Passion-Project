@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://bslig4vf1t5u5"]
+
+[ext_resource type="ArrayMesh" uid="uid://cb4j2qcwoamkf" path="res://assets/potsnpan.obj" id="1_5yas1"]
+[ext_resource type="Texture2D" uid="uid://cquniu1sfnjqn" path="res://wood_table_001_diff_4k.jpg" id="2_u6pn5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxlid"]
+albedo_texture = ExtResource("2_u6pn5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_680on"]
+albedo_texture = ExtResource("2_u6pn5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ge77"]
+albedo_texture = ExtResource("2_u6pn5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fct6m"]
+albedo_texture = ExtResource("2_u6pn5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5you"]
+albedo_texture = ExtResource("2_u6pn5")
+
+[node name="pots_npan" type="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.8813, -1.0815, 7.47092)
+
+[node name="Potsnpan" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_5yas1")
+surface_material_override/0 = SubResource("StandardMaterial3D_kxlid")
+surface_material_override/1 = SubResource("StandardMaterial3D_680on")
+surface_material_override/2 = SubResource("StandardMaterial3D_7ge77")
+surface_material_override/3 = SubResource("StandardMaterial3D_fct6m")
+surface_material_override/4 = SubResource("StandardMaterial3D_g5you")

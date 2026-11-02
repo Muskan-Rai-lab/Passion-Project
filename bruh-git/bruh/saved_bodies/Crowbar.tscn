@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3v8it4rujf8t"]
+
+[ext_resource type="PackedScene" uid="uid://dktorbm6tindl" path="res://try.gltf" id="1_8q1f8"]
+
+[node name="Crowbar" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.7, -0.7, -9.5)
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_8q1f8")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

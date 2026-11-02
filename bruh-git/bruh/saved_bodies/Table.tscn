@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbxhsxc08dpvy"]
+
+[ext_resource type="ArrayMesh" uid="uid://cbb0ejd8dhm3h" path="res://assets/table.obj" id="1_52c8r"]
+[ext_resource type="Texture2D" uid="uid://bowe2s5xpwu8g" path="res://wood_table_worn_diff_4k.jpg" id="2_csvtn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ffc0"]
+albedo_texture = ExtResource("2_csvtn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6b2ee"]
+size = Vector3(4.5, 0.1, 2.7)
+
+[node name="table" type="StaticBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.22582, -1.95, 5.60989)
+
+[node name="Table" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_52c8r")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ffc0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.848065, -0.477316)
+shape = SubResource("BoxShape3D_6b2ee")

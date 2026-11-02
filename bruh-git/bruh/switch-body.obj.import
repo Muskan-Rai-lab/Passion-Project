@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bw7o1xw1wibn7"
+path="res://.godot/imported/switch-body.obj-05e1c5ab92788f7a14537d0de84cc720.mesh"
+
+[deps]
+
+files=["res://.godot/imported/switch-body.obj-05e1c5ab92788f7a14537d0de84cc720.mesh"]
+
+source_file="res://switch-body.obj"
+dest_files=["res://.godot/imported/switch-body.obj-05e1c5ab92788f7a14537d0de84cc720.mesh", "res://.godot/imported/switch-body.obj-05e1c5ab92788f7a14537d0de84cc720.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.35, 0.3, 0.3)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
