@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpbmv0p2dfcy"]
+
+[ext_resource type="ArrayMesh" uid="uid://wlaxakumgx5u" path="res://assets/tiny_table.obj" id="1_das3w"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pdf4t"]
+height = 1.0
+radius = 0.7
+
+[node name="small_table" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -2, -1)
+
+[node name="TinyTable" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_das3w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CylinderShape3D_pdf4t")

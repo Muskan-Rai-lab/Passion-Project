@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://7h0guipu8tmx"]
+
+[ext_resource type="ArrayMesh" uid="uid://davf3hrtaqg8e" path="res://plant.obj" id="1_yyybv"]
+
+[node name="plant" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.9, -1)
+
+[node name="Plant" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_yyybv")

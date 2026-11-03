@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://i727fhpwap8d"]
+
+[ext_resource type="Script" path="res://key.gd" id="1_4v3eo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_42pd7"]
+size = Vector3(0.5, 0.2, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nqy4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cmonx"]
+size = Vector3(0.5, 0.2, 2.5)
+
+[node name="piles" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_4v3eo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_42pd7")
+surface_material_override/0 = SubResource("StandardMaterial3D_3nqy4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0.5, 0.1, 0)
+mesh = SubResource("BoxMesh_42pd7")
+surface_material_override/0 = SubResource("StandardMaterial3D_3nqy4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cmonx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

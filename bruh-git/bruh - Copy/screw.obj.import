@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://oax54f1504td"
+path="res://.godot/imported/screw.obj-4907cbfcb3d9529bbeac79284c2e3791.mesh"
+
+[deps]
+
+files=["res://.godot/imported/screw.obj-4907cbfcb3d9529bbeac79284c2e3791.mesh"]
+
+source_file="res://screw.obj"
+dest_files=["res://.godot/imported/screw.obj-4907cbfcb3d9529bbeac79284c2e3791.mesh", "res://.godot/imported/screw.obj-4907cbfcb3d9529bbeac79284c2e3791.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(3, 3, 3)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
