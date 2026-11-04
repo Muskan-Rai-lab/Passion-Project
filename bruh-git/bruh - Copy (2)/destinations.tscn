@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ovrnes62jct0"]
+
+[node name="destinations" type="Node3D"]
+
+[node name="destination" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70187, 1.36903, 4.13787)
+
+[node name="destination2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.20895, 5.5224, -2.91492)
+
+[node name="destination3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49105, 10.8224, -5.41492)
+
+[node name="destination4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49105, 16.1224, -5.41492)

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6jopbjjn6m27"
+path="res://.godot/imported/closet_Door.obj-0a7518661a115a06b6aff5b55f80bc80.mesh"
+
+[deps]
+
+files=["res://.godot/imported/closet_Door.obj-0a7518661a115a06b6aff5b55f80bc80.mesh"]
+
+source_file="res://assets/closet_Door.obj"
+dest_files=["res://.godot/imported/closet_Door.obj-0a7518661a115a06b6aff5b55f80bc80.mesh", "res://.godot/imported/closet_Door.obj-0a7518661a115a06b6aff5b55f80bc80.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.8, 0.75, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://fpwpfyd6m18l"]
+
+[ext_resource type="Script" path="res://umpscare_trigger.gd" id="1_asuap"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_538nf"]
+size = Vector3(2, 2, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gr78x"]
+
+[node name="umpscare_trigger" type="Area3D" node_paths=PackedStringArray("ghost", "scare_sound", "anim_player")]
+script = ExtResource("1_asuap")
+ghost = NodePath("MeshInstance3D")
+scare_sound = NodePath("AudioStreamPlayer2D")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_538nf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.5, 0, 0)
+mesh = SubResource("PlaneMesh_gr78x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer3D" parent="."]

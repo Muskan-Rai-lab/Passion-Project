@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxxnnwetxyrpx"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1emuo34ng0i8" path="res://assets/stair.obj" id="1_cl68u"]
+[ext_resource type="ArrayMesh" uid="uid://dm2atkhl5x7q0" path="res://broken_stair.obj" id="2_h2hem"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mk8dm"]
+data = PackedVector3Array(-5, 2.6, 1.25, 1, -2.6, 1.25, -1, -2.6, 1.25, -5, 2.6, -1.25, -1, -2.6, -1.25, 1, -2.6, -1.25, -5, 2.6, 1.25, -5, 2.6, -1.25, 1, -2.6, 1.25, -5, 2.6, -1.25, 1, -2.6, -1.25, 1, -2.6, 1.25, -5, 2.6, -1.25, -5, 2.6, 1.25, -1, -2.6, -1.25, -5, 2.6, 1.25, -1, -2.6, 1.25, -1, -2.6, -1.25, -1, -2.6, 1.25, 1, -2.6, 1.25, -1, -2.6, -1.25, 1, -2.6, 1.25, 1, -2.6, -1.25, -1, -2.6, -1.25)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cyip2"]
+points = PackedVector3Array(-5, 2.5, 1.25, -5, 2.5, -1.25, -1.00039, -2.5, 1.25, 1, -2.5, 1.25, 1, -2.5, -1.25, -1.00039, -2.5, -1.25)
+
+[node name="stairs" type="MultiMeshInstance3D"]
+
+[node name="stair" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.25, 1.60753, 5.04)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stair"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -2.72436, -4.04949)
+mesh = ExtResource("1_cl68u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="stair"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.0999999, 0)
+shape = SubResource("ConcavePolygonShape3D_mk8dm")
+
+[node name="stair2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 6.564, 8.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stair2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06997, -2.59976, 0)
+mesh = ExtResource("1_cl68u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair2"]
+shape = SubResource("ConvexPolygonShape3D_cyip2")
+
+[node name="stair3" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.014, 10, -6)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stair3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.76724, -1.07915, -6.00394)
+mesh = ExtResource("2_h2hem")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.76724, 1.56423, -1.91384)
+shape = SubResource("ConvexPolygonShape3D_cyip2")

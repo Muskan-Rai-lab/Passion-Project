@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxrlqe3nw2tus"
+path="res://.godot/imported/tape.obj-57bd94045ef49d3faffd51754e7e5164.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tape.obj-57bd94045ef49d3faffd51754e7e5164.mesh"]
+
+source_file="res://tape.obj"
+dest_files=["res://.godot/imported/tape.obj-57bd94045ef49d3faffd51754e7e5164.mesh", "res://.godot/imported/tape.obj-57bd94045ef49d3faffd51754e7e5164.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.2, 0.2, 0.2)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://duyqhbstkhl57"]
+
+[ext_resource type="Script" path="res://bora.gd" id="1_4f0cf"]
+[ext_resource type="ArrayMesh" uid="uid://c0ckjamnlb1fd" path="res://saved_bodies/bora.obj" id="1_ow2o7"]
+[ext_resource type="Texture2D" uid="uid://cjlai8bovawg1" path="res://straw_texture.jpg" id="2_qf86y"]
+[ext_resource type="Texture2D" uid="uid://dsnqf50tjo16a" path="res://under.jpg" id="3_gl6fh"]
+[ext_resource type="Texture2D" uid="uid://cof51ywmtqoc2" path="res://progress.jpg" id="4_6iscv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omhf0"]
+albedo_texture = ExtResource("2_qf86y")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_akkgf"]
+height = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywe82"]
+size = Vector3(3, 2.5, 3)
+
+[sub_resource type="Animation" id="Animation_uq1pw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bora/Bora:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fwyl5"]
+resource_name = "lockpick"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bora/Bora:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.223529, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_px3ik"]
+_data = {
+"RESET": SubResource("Animation_uq1pw"),
+"lockpick": SubResource("Animation_fwyl5")
+}
+
+[node name="bora" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3, -2, -0.5)
+script = ExtResource("1_4f0cf")
+
+[node name="Bora" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ow2o7")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_omhf0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CylinderShape3D_akkgf")
+
+[node name="LockpickZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16954, 0.7, 0.127009)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LockpickZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.7, 0)
+shape = SubResource("BoxShape3D_ywe82")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 148.0
+offset_top = 57.0001
+offset_right = 1420.0
+offset_bottom = 225.0
+scale = Vector2(0.729935, 0.212764)
+texture_under = ExtResource("3_gl6fh")
+texture_progress = ExtResource("4_6iscv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_px3ik")
+}

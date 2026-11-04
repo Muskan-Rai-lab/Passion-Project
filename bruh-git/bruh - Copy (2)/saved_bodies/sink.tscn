@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ep4hvr3rhqho"]
+
+[ext_resource type="ArrayMesh" uid="uid://dnex825gs0q6x" path="res://sink.obj" id="1_tmnry"]
+
+[node name="sink" type="StaticBody3D"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -9, -1, -9.5)
+
+[node name="sink" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_tmnry")
+skeleton = NodePath("../../../..")
