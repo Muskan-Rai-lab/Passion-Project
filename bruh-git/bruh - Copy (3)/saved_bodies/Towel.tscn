@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5cecjbnv3ila"]
+
+[ext_resource type="ArrayMesh" uid="uid://cfusglyeaqjxb" path="res://towel.obj" id="1_ad3fe"]
+[ext_resource type="Texture2D" uid="uid://q18v3hvgy1hx" path="res://towel.jpg" id="2_gre5p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62r0q"]
+albedo_texture = ExtResource("2_gre5p")
+
+[node name="Towel" type="StaticBody3D"]
+transform = Transform3D(0.634892, -0.772601, -3.37715e-08, 0, -4.37114e-08, 1, -0.772601, -0.634892, -2.7752e-08, -12, -0.736758, -2.5)
+
+[node name="Towel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -2.98023e-08, -1.77636e-15, 2.98023e-08, 1, -1.77636e-15, 0, 1.77636e-15, 1, 0, 0, 0)
+mesh = ExtResource("1_ad3fe")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_62r0q")

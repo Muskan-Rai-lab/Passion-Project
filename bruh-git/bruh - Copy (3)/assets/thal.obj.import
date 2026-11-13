@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8jutoc43mh1p"
+path="res://.godot/imported/thal.obj-ec281669183406d8013891ea3eecff9e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/thal.obj-ec281669183406d8013891ea3eecff9e.mesh"]
+
+source_file="res://assets/thal.obj"
+dest_files=["res://.godot/imported/thal.obj-ec281669183406d8013891ea3eecff9e.mesh", "res://.godot/imported/thal.obj-ec281669183406d8013891ea3eecff9e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.4, 0.4, 0.4)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

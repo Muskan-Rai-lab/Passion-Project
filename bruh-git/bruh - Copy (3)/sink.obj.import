@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnex825gs0q6x"
+path="res://.godot/imported/sink.obj-637651ece5ab2deb37c3951c24dcf599.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sink.obj-637651ece5ab2deb37c3951c24dcf599.mesh"]
+
+source_file="res://sink.obj"
+dest_files=["res://.godot/imported/sink.obj-637651ece5ab2deb37c3951c24dcf599.mesh", "res://.godot/imported/sink.obj-637651ece5ab2deb37c3951c24dcf599.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.002, 0.002, 0.002)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

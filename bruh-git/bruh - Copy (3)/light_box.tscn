@@ -1,0 +1,229 @@
+[gd_scene load_steps=18 format=3 uid="uid://b2ifmng5r2hfp"]
+
+[ext_resource type="Script" path="res://door_parent.gd" id="1_oscjx"]
+[ext_resource type="Script" path="res://door.gd" id="2_ri5up"]
+[ext_resource type="ArrayMesh" uid="uid://v6ng1fa7gdav" path="res://assets/wall_box.obj" id="3_v844a"]
+[ext_resource type="ArrayMesh" uid="uid://b7m4844vt5tue" path="res://assets/wall_box_lid.obj" id="4_7hisk"]
+[ext_resource type="Script" path="res://win_condition.gd" id="5_hy3ht"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vwx7s"]
+data = PackedVector3Array(0.45, 0.5, -0.4, 0.45, -0.5, -0.4, 0.45, 0.5, 0.4, 0.45, -0.5, 0.4, 0.45, 0.5, 0.4, 0.45, -0.5, -0.4, -0.45, 0.5, 0.4, -0.45, 0.5, -0.4, 0.45, 0.5, 0.4, 0.45, 0.5, -0.4, 0.45, 0.5, 0.4, -0.45, 0.5, -0.4, 0.45, -0.5, 0.4, -0.45, -0.5, 0.4, 0.45, 0.5, 0.4, -0.45, 0.5, 0.4, 0.45, 0.5, 0.4, -0.45, -0.5, 0.4, -0.45, 0.5, 0.4, -0.45, -0.5, 0.4, -0.45, 0.5, -0.4, -0.45, -0.5, -0.4, -0.45, 0.5, -0.4, -0.45, -0.5, 0.4, 0.45, -0.5, 0.4, 0.45, -0.5, -0.4, -0.45, -0.5, 0.4, -0.45, -0.5, -0.4, -0.45, -0.5, 0.4, 0.45, -0.5, -0.4, 0.45, 0.5, -0.4, 0.4, 0.45, -0.4, 0.45, -0.5, -0.4, -0.45, 0.5, -0.4, 0.4, 0.45, -0.4, 0.45, 0.5, -0.4, 0.45, -0.5, -0.4, 0.4, -0.4258, -0.4, 0.4, -0.4445, -0.4, 0.4, 0.45, -0.4, 0.4, -0.4258, -0.4, 0.45, -0.5, -0.4, 0.4, 0.45, -0.4, -0.45, 0.5, -0.4, -0.3785, 0.45, -0.4, -0.4, 0.45, -0.4, -0.3785, 0.45, -0.4, -0.45, 0.5, -0.4, -0.4, 0.45, -0.4, -0.45, 0.5, -0.4, -0.4, 0.4444, -0.4, 0.45, -0.5, -0.4, 0.4, -0.45, -0.4, -0.45, -0.5, -0.4, 0.45, -0.5, -0.4, 0.4, -0.4445, -0.4, 0.4, -0.45, -0.4, -0.45, -0.5, -0.4, -0.4, 0.4258, -0.4, -0.45, 0.5, -0.4, -0.45, 0.5, -0.4, -0.4, 0.4258, -0.4, -0.4, 0.4444, -0.4, -0.4, -0.45, -0.4, -0.45, -0.5, -0.4, 0.3785, -0.45, -0.4, 0.4, -0.45, -0.4, 0.3785, -0.45, -0.4, -0.45, -0.5, -0.4, -0.45, -0.5, -0.4, -0.4, -0.45, -0.4, -0.4, 0.4258, -0.4, 0.4, 0.45, -0.4, 0.4, 0.45, 0.3785, 0.4, -0.4258, -0.4, 0.4, -0.4445, -0.4, 0.4, -0.45, 0.3785, 0.4, -0.45, -0.4, 0.4, -0.4445, -0.4, 0.4, 0.45, 0.3785, 0.4, -0.45, 0.3785, 0.4, -0.4258, -0.4, 0.4, 0.45, 0.3785, 0.4, -0.4445, -0.4, -0.4, 0.45, -0.4, 0.4, 0.45, 0.3785, -0.3785, 0.45, -0.4, -0.4, 0.45, -0.4, -0.4, 0.45, 0.3785, 0.4, 0.45, 0.3785, -0.3785, 0.45, -0.4, 0.4, 0.45, 0.3785, 0.4, 0.45, -0.4, -0.4, -0.45, 0.3785, 0.4, -0.45, 0.3785, 0.4, 0.45, 0.3785, 0.4, 0.45, 0.3785, -0.4, 0.45, 0.3785, -0.4, -0.45, 0.3785, -0.4, 0.4444, -0.4, -0.4, 0.45, 0.3785, -0.4, 0.45, -0.4, -0.4, 0.4444, -0.4, -0.4, -0.45, 0.3785, -0.4, 0.45, 0.3785, -0.4, 0.4258, -0.4, -0.4, -0.45, 0.3785, -0.4, 0.4444, -0.4, -0.4, -0.45, -0.4, -0.4, -0.45, 0.3785, -0.4, 0.4258, -0.4, 0.4, -0.45, -0.4, -0.4, -0.45, 0.3785, 0.3785, -0.45, -0.4, 0.4, -0.45, -0.4, 0.4, -0.45, 0.3785, -0.4, -0.45, 0.3785, 0.3785, -0.45, -0.4, -0.4, -0.45, 0.3785, -0.4, -0.45, -0.4)
+
+[sub_resource type="Animation" id="Animation_u7jyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge/StaticBody3D/lid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hinge/StaticBody3D/lid:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iq7tm"]
+resource_name = "open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge/StaticBody3D/lid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hinge/StaticBody3D/lid:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkqph"]
+_data = {
+"RESET": SubResource("Animation_u7jyu"),
+"open": SubResource("Animation_iq7tm")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lex8o"]
+size = Vector3(0.9, 1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_odyip"]
+lightmap_size_hint = Vector2i(24, 36)
+size = Vector3(0.5, 1, 0.8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_us5cg"]
+points = PackedVector3Array(0.25, -0.477152, -0.383405, 0.246134, 0.5, 0.395263, -0.25, 0.492544, 0.389322, 0.245155, 0.497977, -0.4, -0.25, -0.492544, 0.389322, -0.25, -0.492544, -0.395671, -0.25, 0.492544, -0.395671, 0.25, -0.477152, 0.377056, 0.25, 0.477153, -0.38348, 0.25, 0.477153, 0.377131)
+
+[sub_resource type="Animation" id="Animation_1if0y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGBox3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_266uf"]
+resource_name = "key1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.523599, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vw8vf"]
+resource_name = "key2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ng6r3"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bbiwi"]
+_data = {
+"RESET": SubResource("Animation_1if0y"),
+"key1": SubResource("Animation_266uf"),
+"key2": SubResource("Animation_vw8vf"),
+"open": SubResource("Animation_ng6r3")
+}
+
+[node name="light_box" type="Node3D"]
+
+[node name="wall_box" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_oscjx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall_box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+script = ExtResource("2_ri5up")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall_box/StaticBody3D"]
+mesh = ExtResource("3_v844a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_box/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vwx7s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wall_box/StaticBody3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_gkqph")
+}
+
+[node name="lid" type="StaticBody3D" parent="wall_box/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall_box/StaticBody3D/lid"]
+mesh = ExtResource("4_7hisk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_box/StaticBody3D/lid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98425e-08, 0, -0.453943)
+shape = SubResource("BoxShape3D_lex8o")
+
+[node name="win_condition" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.242986, -0.00207514)
+script = ExtResource("5_hy3ht")
+
+[node name="CSGBox3D" type="MeshInstance3D" parent="win_condition"]
+mesh = SubResource("BoxMesh_odyip")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="win_condition"]
+shape = SubResource("ConvexPolygonShape3D_us5cg")
+
+[node name="anim1" type="AnimationPlayer" parent="win_condition"]
+libraries = {
+"": SubResource("AnimationLibrary_bbiwi")
+}
+
+[node name="anim2" type="AnimationPlayer" parent="win_condition"]
+libraries = {
+"": SubResource("AnimationLibrary_bbiwi")
+}
+
+[connection signal="child_door_spotted" from="wall_box" to="wall_box/StaticBody3D" method="_on_door_child_door_spotted"]

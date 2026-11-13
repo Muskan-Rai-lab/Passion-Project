@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://0njxl274hxdd"]
+
+[ext_resource type="Script" path="res://gloves.gd" id="1_bfilb"]
+[ext_resource type="Texture2D" uid="uid://d27pmh30kj0jk" path="res://gloves.png" id="2_w5uhg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x8mog"]
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rahrb"]
+transparency = 1
+albedo_texture = ExtResource("2_w5uhg")
+texture_filter = 4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n0aw1"]
+height = 0.3
+
+[node name="gloves" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_bfilb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_x8mog")
+surface_material_override/0 = SubResource("StandardMaterial3D_rahrb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0846347, 0)
+shape = SubResource("CylinderShape3D_n0aw1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

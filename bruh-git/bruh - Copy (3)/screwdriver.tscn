@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://eu1p4hlxllw0"]
+
+[ext_resource type="Script" path="res://key.gd" id="1_r2kpy"]
+[ext_resource type="ArrayMesh" uid="uid://b02d7ibpn1ddb" path="res://Screwdriver.obj" id="2_g7bje"]
+[ext_resource type="Texture2D" uid="uid://bjp2k7dfwuokf" path="res://ScrewdriverAlbedo.png" id="3_8mbu7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b64nf"]
+albedo_texture = ExtResource("3_8mbu7")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yq3pp"]
+height = 0.2
+radius = 0.25
+
+[node name="screwdriver" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_r2kpy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.344856, 0.938656, 0, -0.938656, 0.344856, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_g7bje")
+surface_material_override/0 = SubResource("StandardMaterial3D_b64nf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0705718, 0)
+shape = SubResource("CylinderShape3D_yq3pp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

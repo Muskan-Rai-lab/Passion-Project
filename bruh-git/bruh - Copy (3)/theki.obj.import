@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wrhhhgrf4eor"
+path="res://.godot/imported/theki.obj-cc98fd8de4752330861b05eafb1cfec5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/theki.obj-cc98fd8de4752330861b05eafb1cfec5.mesh"]
+
+source_file="res://theki.obj"
+dest_files=["res://.godot/imported/theki.obj-cc98fd8de4752330861b05eafb1cfec5.mesh", "res://.godot/imported/theki.obj-cc98fd8de4752330861b05eafb1cfec5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

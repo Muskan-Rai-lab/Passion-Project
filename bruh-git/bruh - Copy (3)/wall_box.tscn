@@ -1,0 +1,387 @@
+[gd_scene load_steps=10 format=3 uid="uid://chrq5n0cuvw4b"]
+
+[ext_resource type="ArrayMesh" uid="uid://v6ng1fa7gdav" path="res://assets/wall_box.obj" id="1_38j7u"]
+[ext_resource type="ArrayMesh" uid="uid://b7m4844vt5tue" path="res://assets/wall_box_lid.obj" id="2_27wjt"]
+[ext_resource type="Script" path="res://wall_box.gd" id="2_pk62w"]
+[ext_resource type="ArrayMesh" uid="uid://oax54f1504td" path="res://screw.obj" id="4_jkj4t"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cxxip"]
+data = PackedVector3Array(0.45, 0.5, -0.4, 0.45, -0.5, -0.4, 0.45, 0.5, 0.4, 0.45, -0.5, 0.4, 0.45, 0.5, 0.4, 0.45, -0.5, -0.4, -0.45, 0.5, 0.4, -0.45, 0.5, -0.4, 0.45, 0.5, 0.4, 0.45, 0.5, -0.4, 0.45, 0.5, 0.4, -0.45, 0.5, -0.4, 0.45, -0.5, 0.4, -0.45, -0.5, 0.4, 0.45, 0.5, 0.4, -0.45, 0.5, 0.4, 0.45, 0.5, 0.4, -0.45, -0.5, 0.4, -0.45, 0.5, 0.4, -0.45, -0.5, 0.4, -0.45, 0.5, -0.4, -0.45, -0.5, -0.4, -0.45, 0.5, -0.4, -0.45, -0.5, 0.4, 0.45, -0.5, 0.4, 0.45, -0.5, -0.4, -0.45, -0.5, 0.4, -0.45, -0.5, -0.4, -0.45, -0.5, 0.4, 0.45, -0.5, -0.4, 0.45, 0.5, -0.4, 0.4, 0.45, -0.4, 0.45, -0.5, -0.4, -0.45, 0.5, -0.4, 0.4, 0.45, -0.4, 0.45, 0.5, -0.4, 0.45, -0.5, -0.4, 0.4, -0.4258, -0.4, 0.4, -0.4445, -0.4, 0.4, 0.45, -0.4, 0.4, -0.4258, -0.4, 0.45, -0.5, -0.4, 0.4, 0.45, -0.4, -0.45, 0.5, -0.4, -0.3785, 0.45, -0.4, -0.4, 0.45, -0.4, -0.3785, 0.45, -0.4, -0.45, 0.5, -0.4, -0.4, 0.45, -0.4, -0.45, 0.5, -0.4, -0.4, 0.4444, -0.4, 0.45, -0.5, -0.4, 0.4, -0.45, -0.4, -0.45, -0.5, -0.4, 0.45, -0.5, -0.4, 0.4, -0.4445, -0.4, 0.4, -0.45, -0.4, -0.45, -0.5, -0.4, -0.4, 0.4258, -0.4, -0.45, 0.5, -0.4, -0.45, 0.5, -0.4, -0.4, 0.4258, -0.4, -0.4, 0.4444, -0.4, -0.4, -0.45, -0.4, -0.45, -0.5, -0.4, 0.3785, -0.45, -0.4, 0.4, -0.45, -0.4, 0.3785, -0.45, -0.4, -0.45, -0.5, -0.4, -0.45, -0.5, -0.4, -0.4, -0.45, -0.4, -0.4, 0.4258, -0.4, 0.4, 0.45, -0.4, 0.4, 0.45, 0.3785, 0.4, -0.4258, -0.4, 0.4, -0.4445, -0.4, 0.4, -0.45, 0.3785, 0.4, -0.45, -0.4, 0.4, -0.4445, -0.4, 0.4, 0.45, 0.3785, 0.4, -0.45, 0.3785, 0.4, -0.4258, -0.4, 0.4, 0.45, 0.3785, 0.4, -0.4445, -0.4, -0.4, 0.45, -0.4, 0.4, 0.45, 0.3785, -0.3785, 0.45, -0.4, -0.4, 0.45, -0.4, -0.4, 0.45, 0.3785, 0.4, 0.45, 0.3785, -0.3785, 0.45, -0.4, 0.4, 0.45, 0.3785, 0.4, 0.45, -0.4, -0.4, -0.45, 0.3785, 0.4, -0.45, 0.3785, 0.4, 0.45, 0.3785, 0.4, 0.45, 0.3785, -0.4, 0.45, 0.3785, -0.4, -0.45, 0.3785, -0.4, 0.4444, -0.4, -0.4, 0.45, 0.3785, -0.4, 0.45, -0.4, -0.4, 0.4444, -0.4, -0.4, -0.45, 0.3785, -0.4, 0.45, 0.3785, -0.4, 0.4258, -0.4, -0.4, -0.45, 0.3785, -0.4, 0.4444, -0.4, -0.4, -0.45, -0.4, -0.4, -0.45, 0.3785, -0.4, 0.4258, -0.4, 0.4, -0.45, -0.4, -0.4, -0.45, 0.3785, 0.3785, -0.45, -0.4, 0.4, -0.45, -0.4, 0.4, -0.45, 0.3785, -0.4, -0.45, 0.3785, 0.3785, -0.45, -0.4, -0.4, -0.45, 0.3785, -0.4, -0.45, -0.4)
+
+[sub_resource type="Animation" id="Animation_mv7y7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wall_box/hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wall_box/Screw:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.342177, 0.402925, -0.35171)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wall_box/Screw:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wall_box/Screw3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.342974, 0.400122, -0.35171)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wall_box/Screw4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.343, -0.4, -0.352)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("wall_box/Screw2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.342, -0.403, -0.352)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("wall_box/Screw3:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("wall_box/Screw4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("wall_box/Screw2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("wall_box/Screw:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("wall_box/Screw2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("wall_box/Screw3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("wall_box/Screw4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bb3sf"]
+resource_name = "open"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wall_box/hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.9, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.39626, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wall_box/Screw:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.342177, 0.402925, -0.35171), Vector3(0.342177, 0.402925, -0.598625)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wall_box/Screw:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-0.785398, 1.5708, -1.5708)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wall_box/Screw3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.342974, 0.400122, -0.35171), Vector3(-0.342974, 0.400122, -0.65171)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wall_box/Screw4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.343, -0.4, -0.352), Vector3(-0.343, -0.4, -0.652)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("wall_box/Screw2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.9, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.342, -0.403, -0.352), Vector3(0.342, -0.403, -0.652)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("wall_box/Screw3:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-0.523599, 1.5708, -1.5708)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("wall_box/Screw4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-0.523599, 1.5708, -1.5708)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("wall_box/Screw2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.9, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-0.523599, 1.5708, -1.5708)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("wall_box/Screw:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("wall_box/Screw2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.9, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("wall_box/Screw3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("wall_box/Screw4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.6, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fuepd"]
+_data = {
+"RESET": SubResource("Animation_mv7y7"),
+"open": SubResource("Animation_bb3sf")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cffni"]
+size = Vector3(0.9, 1, 0.1)
+
+[node name="wall_box" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_38j7u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_cxxip")
+
+[node name="wall_box" type="Node3D" parent="."]
+script = ExtResource("2_pk62w")
+
+[node name="hinge" type="Node3D" parent="wall_box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396981, 0, -0.421942)
+
+[node name="wall_box_lid" type="StaticBody3D" parent="wall_box/hinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396981, 0, 0.421942)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall_box/hinge/wall_box_lid"]
+mesh = ExtResource("2_27wjt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wall_box/hinge/wall_box_lid"]
+root_node = NodePath("../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fuepd")
+}
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wall_box/hinge/wall_box_lid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.445615)
+shape = SubResource("BoxShape3D_cffni")
+
+[node name="Screw" type="MeshInstance3D" parent="wall_box"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0.342177, 0.402925, -0.35171)
+mesh = ExtResource("4_jkj4t")
+skeleton = NodePath("../..")
+
+[node name="Screw2" type="MeshInstance3D" parent="wall_box"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0.342, -0.403, -0.352)
+mesh = ExtResource("4_jkj4t")
+skeleton = NodePath("../..")
+
+[node name="Screw3" type="MeshInstance3D" parent="wall_box"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, -0.342974, 0.400122, -0.35171)
+mesh = ExtResource("4_jkj4t")
+skeleton = NodePath("../..")
+
+[node name="Screw4" type="MeshInstance3D" parent="wall_box"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, -0.343, -0.4, -0.352)
+mesh = ExtResource("4_jkj4t")
+skeleton = NodePath("../..")
